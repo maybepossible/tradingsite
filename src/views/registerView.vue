@@ -1,7 +1,5 @@
 <template>
-  <div class="wrap">
-    <p>这是登录页</p>
-  </div>
+  <p>这是注册页面</p>
 </template>
 
 <script>
