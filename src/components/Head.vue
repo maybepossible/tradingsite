@@ -1,46 +1,69 @@
 <template>
-  <div class="wrap">
-    <img
-      class="logo"
-      src="@/assets/images/logo.jpg"
-      alt="正在加载logo图片，请稍等"
-    />
-    <span>欢迎来到二手交易平台</span>
-  </div>
-  <div class="userList">
-    <v-if>
-      <el-menu-item index="0">LOGO</el-menu-item>
-    </v-if>
-    <v-else>
+  <div class="header">
+    <div class="left">
+      <img
+        src="@/assets/images/logo.png "
+        alt="这是logo图片，正在加载中，请稍等"
+      />
+    </div>
+    <div class="right">
       <el-menu
-        :default-active="activeIndex"
+        :default-active="activeIndex2"
         class="el-menu-demo"
         mode="horizontal"
-        :ellipsis="false"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b"
         @select="handleSelect"
       >
-        <el-menu-item index="0">LOGO</el-menu-item>
-        <div class="flex-grow" />
-        <el-menu-item index="1">首页</el-menu-item>
+        <el-menu-item index="1">登录/注册</el-menu-item>
         <el-menu-item index="2">个人中心</el-menu-item>
         <el-menu-item index="3">发布信息</el-menu-item>
-        <el-menu-item index="4">我的订单</el-menu-item>
-        <el-menu-item index="5">意见反馈</el-menu-item>
+        <el-menu-item index="4">意见反馈</el-menu-item>
       </el-menu>
-    </v-else>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      index: 'a'
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
-.wrap {
+* {
+  padding: 0;
+  margin: 0;
+}
+.header {
   width: 100%;
   height: 100px;
-  img {
-    height: 100px;
+  background-color: #fff;
+  .left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    img {
+      width: 100px;
+      height: 100px;
+      margin: 0 15%;
+    }
+  }
+  .right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    .el-menu {
+      height: 100%;
+      .el-menu-item {
+        width: 20%;
+      }
+    }
   }
 }
 </style>

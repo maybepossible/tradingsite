@@ -3,8 +3,15 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 // import axios from 'axios'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
 
 const app = createApp(App)
+
+// 从 @element-plus/icons-vue 中导入所有图标并进行全局注册
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 // 全局配置 axios 的请求根路径
 //axios.defaults.baseURL固定写法
